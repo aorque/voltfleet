@@ -345,14 +345,27 @@
   .vehicle-card .stat-row {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     padding: 8px 0;
     border-bottom: 1px solid var(--border);
     font-size: 13px;
+    gap: 8px;
   }
   .vehicle-card .stat-row:last-child { border-bottom: none; }
-  .vehicle-card .stat-row .label { color: var(--muted); }
-  .vehicle-card .stat-row .val { font-weight: 600; color: var(--text); }
+  .vehicle-card .stat-row .label { color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+  .vehicle-card .stat-row .val { font-weight: 600; color: var(--text); text-align: right; }
   .vehicle-card .stat-row .val.good { color: var(--green); }
+  .vehicle-card .stat-row.stack {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+  .vehicle-card .stat-row.stack .label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .vehicle-card .stat-row.stack .val { text-align: left; }
 
   /* METRIC BOXES */
   .metric-row {
@@ -688,32 +701,32 @@
       <div class="vehicle-card">
         <div class="ev-badge">Core Reliability Fleet</div>
         <h3>Toyota Camry / Corolla (2014–2022)</h3>
-        <div class="price">$6–14K <span>auction / repossessed</span></div>
+        <div class="price">$2–5K <span>auction / repossessed</span></div>
         <div class="stat-row"><span class="label">Daily Rate (Turo)</span><span class="val good">$38–55</span></div>
         <div class="stat-row"><span class="label">Target Occupancy</span><span class="val">15–20 days/mo</span></div>
         <div class="stat-row"><span class="label">Gross Monthly</span><span class="val good">$570–1,100</span></div>
-        <div class="stat-row"><span class="label">Maintenance Edge</span><span class="val good">Most reliable ICE on the market. Parts everywhere.</span></div>
-        <div class="stat-row"><span class="label">Why It Works</span><span class="val">Low acquisition cost, low RNM. Workhorse of the fleet.</span></div>
+        <div class="stat-row stack"><span class="label">Maintenance Edge</span><span class="val good">Most reliable ICE on the market. Parts everywhere.</span></div>
+        <div class="stat-row stack"><span class="label">Why It Works</span><span class="val">Low acquisition cost, low RNM. Workhorse of the fleet.</span></div>
       </div>
       <div class="vehicle-card">
         <div class="ev-badge">Core Reliability Fleet</div>
         <h3>Honda Accord / Civic (2014–2022)</h3>
-        <div class="price">$6–13K <span>auction / repossessed</span></div>
+        <div class="price">$2–5K <span>auction / repossessed</span></div>
         <div class="stat-row"><span class="label">Daily Rate (Turo)</span><span class="val good">$38–55</span></div>
         <div class="stat-row"><span class="label">Target Occupancy</span><span class="val">15–20 days/mo</span></div>
         <div class="stat-row"><span class="label">Gross Monthly</span><span class="val good">$570–1,100</span></div>
-        <div class="stat-row"><span class="label">Maintenance Edge</span><span class="val good">Same parts strategy as Toyota. Interchangeable supplier.</span></div>
-        <div class="stat-row"><span class="label">Why It Works</span><span class="val">Standardized fleet = lower per-unit cost. Scales clean.</span></div>
+        <div class="stat-row stack"><span class="label">Maintenance Edge</span><span class="val good">Same parts strategy as Toyota. Interchangeable supplier.</span></div>
+        <div class="stat-row stack"><span class="label">Why It Works</span><span class="val">Standardized fleet = lower per-unit cost. Scales clean.</span></div>
       </div>
       <div class="vehicle-card">
         <div class="ev-badge">Demand Driver</div>
         <h3>Ford Mustang (2014–2022)</h3>
-        <div class="price">$10–18K <span>auction / repossessed</span></div>
+        <div class="price">$4–7K <span>auction / repossessed</span></div>
         <div class="stat-row"><span class="label">Daily Rate (Turo)</span><span class="val good">$65–85</span></div>
         <div class="stat-row"><span class="label">Target Occupancy</span><span class="val">15–20 days/mo</span></div>
         <div class="stat-row"><span class="label">Gross Monthly</span><span class="val good">$975–1,700</span></div>
-        <div class="stat-row"><span class="label">Maintenance Edge</span><span class="val">Ford dealer network, widely available parts</span></div>
-        <div class="stat-row"><span class="label">Why It Works</span><span class="val">Tourist crack on Turo. Convertible = premium listing. Event pricing magnet.</span></div>
+        <div class="stat-row stack"><span class="label">Maintenance Edge</span><span class="val">Ford dealer network, widely available parts.</span></div>
+        <div class="stat-row stack"><span class="label">Why It Works</span><span class="val">Tourist crack on Turo. Convertible = premium listing. Event pricing magnet.</span></div>
       </div>
     </div>
 
@@ -816,28 +829,28 @@
           <td>3 cars</td>
           <td>~$2,475</td>
           <td class="positive">~$1,041</td>
-          <td>$25–40K</td>
+          <td>$10–20K</td>
         </tr>
         <tr>
           <td>Phase 3–4 (Months 6–18)</td>
           <td>5 cars</td>
           <td>~$4,125</td>
           <td class="positive">~$1,800</td>
-          <td>$40–60K</td>
+          <td>$20–35K</td>
         </tr>
         <tr>
           <td>Phase 5 — Year 2 (Scale)</td>
           <td>8–10 cars</td>
           <td>~$7,000+</td>
           <td class="positive">~$3,200+</td>
-          <td>$75–100K</td>
+          <td>$40–65K</td>
         </tr>
         <tr class="total">
           <td>Phase 5+ — EV Tier Added</td>
           <td>10–15 cars</td>
           <td>$12,000+</td>
           <td class="positive">~$5,500+</td>
-          <td>$120K+</td>
+          <td>$80K+</td>
         </tr>
       </tbody>
     </table>
